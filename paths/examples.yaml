@@ -1,0 +1,12 @@
+
+/examples:
+  get:
+    operationId: getExamples
+    summary: examples
+    responses:
+      '200':
+        description: examples
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/examples'

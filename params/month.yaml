@@ -1,0 +1,6 @@
+month:
+  in: query
+  name: month
+  schema:
+    type: integer
+  description: month (1-12)

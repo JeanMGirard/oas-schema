@@ -1,0 +1,6 @@
+page:
+  in: query
+  name: page
+  schema:
+    type: integer
+  description: pagination

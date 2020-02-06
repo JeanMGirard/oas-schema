@@ -1,0 +1,6 @@
+lang:
+  in: query
+  name: lang
+  schema:
+    type: string
+  description: langid

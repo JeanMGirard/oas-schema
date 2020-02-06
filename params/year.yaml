@@ -1,0 +1,6 @@
+year:
+  in: query
+  name: year
+  schema:
+    type: integer
+  description: year

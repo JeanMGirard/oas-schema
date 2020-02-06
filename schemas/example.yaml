@@ -1,0 +1,11 @@
+examples:
+  type: array
+  items:
+    $ref: "#/components/schemas/example"
+
+example:
+  type: object
+  properties:
+    id:
+      type: string
+      description: "Unique identifier"

@@ -1,0 +1,6 @@
+day:
+  in: query
+  name: day
+  schema:
+    type: integer
+  description: day

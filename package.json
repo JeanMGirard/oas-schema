@@ -1,0 +1,38 @@
+{
+  "name": "oas-schemas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "merge": "swagger-merger -i schemas.yaml -o openapi.yaml",
+    "prebuild": "npm run merge",
+    "build": "",
+    "build:all": "npm run build:android && npm run build:docs && npm run build:docs2 && npm run build:csharp && npm run build:php",
+    "build:android": "npm run prebuild && openapi-generator generate -i openapi.yaml -g android -o dist/android/ --package-name agb.lib --model-package models --api-package api",
+    "build:docs":   "npm run prebuild && openapi-generator generate -i openapi.yaml -g html2 -o dist/docs/ --package-name AGB.Lib --model-package Models --api-package Api && gulp docs",
+    "build:docs2":  "npm run prebuild && openapi-generator generate -i openapi.yaml -g html -o dist/docs2/ --package-name AGB.Lib --model-package Models --api-package Api && gulp docs2",
+    "build:csharp": "npm run prebuild && openapi-generator generate -i openapi.yaml -g csharp -o dist/csharp/ --package-name AGB.Lib --model-package Models --api-package Api",
+    "build:php":    "npm run prebuild && openapi-generator generate -i openapi.yaml -g php -o dist/php/  --package-name AGB.Lib --model-package Models --api-package Api && gulp php",
+    "build:swift":  "npm run prebuild && openapi-generator generate -i openapi.yaml -g swift4 -o dist/swift4/  --package-name AGB.Lib --model-package Models --api-package Api",
+    "build:axios":  "npm run prebuild && openapi-generator generate -i openapi.yaml -g typescript-axios -o dist/axios --package-name AGB.Lib --model-package Models --api-package Api && tsc"
+  },
+  "author": "Jean.M.Girard@Outlook.com",
+  "license": "ISC",
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "0.0.14-4.0.2",
+    "dotenv": "^8.0.0",
+    "react-router-dom": "^5.1.2",
+    "swagger-merger": "^1.4.3",
+    "tslint": "^5.18.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.19.0",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-replace": "^1.0.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  }
+}

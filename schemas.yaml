@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: OAS Example
+  description: OAS Example
+  version: "1.0.0"
+  contact:
+    name: Jean-Michel Girard
+    email: Examples@exemple.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: '/api'
+    description: development
+paths:
+  $ref#examples:     "./paths/examples.yaml"
+components:
+  parameters:
+    $ref#day:       "./params/day.yaml"
+    $ref#lang:      "./params/lang.yaml"
+    $ref#limit:     "./params/limit.yaml"
+    $ref#month:     "./params/month.yaml"
+    $ref#page:      "./params/page.yaml"
+    $ref#year:      "./params/year.yaml"
+  schemas:
+    $ref#example:    "./schemas/example.yaml"
+  securitySchemes:
+    $ref#cookieAuth:  "./security/cookie-auth.yaml"

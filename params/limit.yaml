@@ -1,0 +1,6 @@
+limit:
+  in: query
+  name: limit
+  schema:
+    type: integer
+  description: response max results
